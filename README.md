@@ -47,19 +47,3 @@ DB_PORT=5432
 `docker-compose up` запуск docker-compose
 
 `docker-compose up -d --build` запуск docker-compose с пересборкой контейнера
-
-
-## Описание команд для заполнения базы данными
-`python manage.py dumpdata > dump.json` экспорт данных в файл
-
-`scp dump.json foxygen-d@158.160.2.148:/home/foxygen-d/yatube-website/yatube/` копирование файла dump.json с локального компьютера на сервер
-
-Перенос данных с SQLite на PostgreSQL:
-```
-python3 manage.py shell
->>> from django.contrib.contenttypes.models import ContentType
->>> ContentType.objects.all().delete()
->>> quit()
-```
-
-`python manage.py loaddata dump.json` 
