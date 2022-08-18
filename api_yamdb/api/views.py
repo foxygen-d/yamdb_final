@@ -1,6 +1,8 @@
+from auth_yamdb.models import ConfirmationCode
+from auth_yamdb.utils import bland_code_hasher, salty_code_hasher
+from django.conf import settings
 from django.core.mail import send_mail
 from django.db.models import Avg
-from django.conf import settings
 from django.shortcuts import get_object_or_404
 from django_filters.rest_framework import DjangoFilterBackend
 from rest_framework import filters, permissions, viewsets
@@ -10,10 +12,8 @@ from rest_framework.pagination import (LimitOffsetPagination,
 from rest_framework.response import Response
 from rest_framework.views import APIView
 from rest_framework_simplejwt.views import TokenViewBase
-
-from auth_yamdb.models import ConfirmationCode
-from auth_yamdb.utils import bland_code_hasher, salty_code_hasher
 from reviews.models import Category, Genre, Review, Title, User
+
 from .filters import TitleFilter
 from .mixins import CreateRetrieveDestroyViewSet
 from .permissions import (RolePermissions, RolePermissionsAuthorOrReadOnly,
@@ -22,8 +22,7 @@ from .serializers import (CategorySerializer, CodeTokenObtainSerializer,
                           CommentsSerializer, GenreSerializer,
                           ReviewSerializer, SignUpSerializer,
                           TitleReadonlySerializer, TitleSerializer,
-                          UserSerializer, UserProfileSerializer)
-
+                          UserProfileSerializer, UserSerializer)
 
 MAIL_SUBJECT = 'YAMDB: Your confirmation code'
 MAIL_BODY = 'Hi {username}, here is your code: {code}'
