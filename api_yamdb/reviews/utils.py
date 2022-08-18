@@ -12,9 +12,8 @@ def get_csv_data(source) -> List[Dict]:
         os.path.join(base_dir, f'static/data/{source}.csv'), 'r'
     ) as file:
         csv_dict = csv.DictReader(file)
-    return [
-            {attr: row.get(attr) for attr in row} for row in csv_dict
-        ]
+    return [{attr: row.get(attr) for attr in row}
+            for row in csv_dict]
 
 
 def set_by_id(payload: Dict, field: AnyStr) -> None:
