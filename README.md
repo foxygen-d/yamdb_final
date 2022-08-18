@@ -20,20 +20,6 @@
 
 ## Задача
 Настроить для приложения Continuous Integration и Continuous Deployment, то есть реализовать:
-* автоматический запуск тестов,
-* обновление образов на Docker Hub,
-* автоматический деплой на боевой сервер при пуше в главную ветку main.
-
-
-## Шаблон наполнения env-файла
-DB_ENGINE=django.db.backends.postgresql
-
-POSTGRES_DB=infra_postgres
-
-POSTGRES_USER=postgres
-
-POSTGRES_PASSWORD=admin
-
-POSTGRES_HOST=db
-
-DB_PORT=5432
+* автоматический запуск тестов
+* обновление образов на Docker Hub
+* автоматический деплой на боевой сервер при пуше в главную ветку main
