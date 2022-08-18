@@ -37,13 +37,3 @@ POSTGRES_PASSWORD=admin
 POSTGRES_HOST=db
 
 DB_PORT=5432
-
-
-## Описание команд для запуска приложения в контейнерах
-`docker build -t <имя образа> .` сборка образа
-
-`docker run --name <имя контейнера> -it -p 8000:8000 yamdb` запуск контейнера
-
-`docker-compose up` запуск docker-compose
-
-`docker-compose up -d --build` запуск docker-compose с пересборкой контейнера
