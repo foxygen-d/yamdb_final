@@ -49,4 +49,4 @@ $ sudo docker-compose exec web python manage.py collectstatic --no-input
 $ sudo docker-compose exec web python manage.py loaddata fixtures.json
 ```
 
-Проект доступен по [URL](http://158.160.2.148/)
+Проект доступен по [ссылке](http://51.250.106.125/)
