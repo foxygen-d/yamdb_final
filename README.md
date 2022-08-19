@@ -30,3 +30,31 @@
 * сборка и доставка докер-образа для контейнера web на Docker Hub
 * автоматический деплой проекта на боевой сервер
 * отправка уведомления в Telegram о том, что процесс деплоя успешно завершился
+
+
+## Запуск проекта
+
+# Шаблон наполнения env-файла
+DB_ENGINE=django.db.backends.postgresql
+
+POSTGRES_DB=infra_postgres
+
+POSTGRES_USER=postgres
+
+POSTGRES_PASSWORD=postgres
+
+POSTGRES_HOST=db
+
+DB_PORT=5432
+
+# Запуск docker-compose
+`$ sudo docker-compose up -d --build`
+
+# Выполнить миграции, создать суперпользователя, собрать статику
+```
+$ sudo docker-compose exec web python manage.py migrate
+$ sudo docker-compose exec web python manage.py createsuperuser
+$ sudo docker-compose exec web python manage.py collectstatic --no-input 
+```
+
+Проект доступен по [URL](http://localhost/)
