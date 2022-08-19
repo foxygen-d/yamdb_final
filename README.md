@@ -34,7 +34,7 @@
 
 ## Запуск проекта
 
-# Шаблон наполнения env-файла
+### Шаблон наполнения env-файла
 DB_ENGINE=django.db.backends.postgresql
 
 POSTGRES_DB=infra_postgres
@@ -47,10 +47,10 @@ POSTGRES_HOST=db
 
 DB_PORT=5432
 
-# Запуск docker-compose
+### Запуск docker-compose
 `$ sudo docker-compose up -d --build`
 
-# Выполнить миграции, создать суперпользователя, собрать статику
+### Выполнить миграции, создать суперпользователя, собрать статику
 ```
 $ sudo docker-compose exec web python manage.py migrate
 $ sudo docker-compose exec web python manage.py createsuperuser
