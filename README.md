@@ -50,3 +50,4 @@ $ sudo docker-compose exec web python manage.py loaddata fixtures.json
 ```
 
 Проект доступен по [ссылке](http://51.250.106.125/)
+
