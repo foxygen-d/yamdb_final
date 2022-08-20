@@ -50,4 +50,5 @@ sudo docker-compose exec web python manage.py loaddata fixtures.json
 ```
 
 Ссылка на [проект](http://51.250.106.125/admin)
-Ссылка на [Redoc](http://51.250.106.125/redoc/)
+
+Ссылка на [ReDoc](http://51.250.106.125/redoc)
