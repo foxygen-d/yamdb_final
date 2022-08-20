@@ -42,7 +42,7 @@ jobs:
         uses: docker/build-push-action@v2 
         with:
           push: true
-          tags: foxygend/yamdb_final:latest
+          tags: foxygend/ymdb:latest
           context: api_yamdb
           file: api_yamdb/Dockerfile
 

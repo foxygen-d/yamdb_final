@@ -10,7 +10,7 @@ services:
       - ./.env
 
   web:
-    image: foxygend/yamdb_db:v1.1.1
+    image: foxygend/ymdb:latest
     restart: always
     volumes:
       - static_value:/app/static/
@@ -21,6 +21,10 @@ services:
       - db:db
     env_file:
       - ./.env
+    command: >
+      sh -c "python manage.py collectstatic --noinput &&
+             python manage.py migrate &&
+             gunicorn api_yamdb.wsgi:application --bind 0:8000"
 
   nginx:
     image: nginx:1.21.3-alpine
