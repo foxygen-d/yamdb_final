@@ -10,7 +10,7 @@ services:
       - ./.env
 
   web:
-    image: foxygend/yamdb_final:v1.1.1
+    image: foxygend/yamdb_db:v1.1.1
     restart: always
     volumes:
       - static_value:/app/static/
