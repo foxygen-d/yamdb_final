@@ -39,14 +39,14 @@ DB_PORT=5432
 ```
 
 ### Запуск docker-compose
-`$ sudo docker-compose up -d --build`
+`sudo docker-compose up -d --build`
 
 ### Выполнить миграции, создать суперпользователя, собрать статику, заполнить базу начальными данными
 ```
-$ sudo docker-compose exec web python manage.py migrate
-$ sudo docker-compose exec web python manage.py createsuperuser
-$ sudo docker-compose exec web python manage.py collectstatic --no-input
-$ sudo docker-compose exec web python manage.py loaddata fixtures.json
+sudo docker-compose exec web python manage.py migrate
+sudo docker-compose exec web python manage.py createsuperuser
+sudo docker-compose exec web python manage.py collectstatic --no-input
+sudo docker-compose exec web python manage.py loaddata fixtures.json
 ```
 
 Проект доступен по [ссылке](http://51.250.106.125/admin)
